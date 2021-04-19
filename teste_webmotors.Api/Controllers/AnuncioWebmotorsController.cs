@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using teste_webmotors.Api.Dtos;
 using teste_webmotors.Api.Extensions;
@@ -45,7 +46,7 @@ namespace teste_webmotors.Api.Controllers
 
             await _anuncioWebmotorsService.CriarAnuncio(anuncio);
 
-            return Created("", "Anuncio criado com sucesso!");
+            return StatusCode(StatusCodes.Status201Created);
         }
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace teste_webmotors.Api.Controllers
 
             await _anuncioWebmotorsService.AtualizarAnuncio(anuncio);
 
-            return Ok("Anuncio atualizado com sucesso!");
+            return Ok();
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace teste_webmotors.Api.Controllers
 
             await _anuncioWebmotorsService.DeletarAnuncio(existeAnuncio);
 
-            return Ok("Anuncio atualizado com sucesso!");
+            return Ok();
         }
 
         /// <summary>

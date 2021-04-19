@@ -22,7 +22,7 @@ namespace teste_webmotors.Data.Data.Mapping
 
             builder.Property(x => x.Modelo).HasColumnType("varchar(45)").IsRequired();
             
-            builder.Property(x => x.Versao).HasColumnType("varchar(45)").IsRequired();
+            builder.Property(x => x.Versao).HasColumnType("varchar(200)").IsRequired();
             
             builder.Property(x => x.Ano).HasColumnType("int").IsRequired();
             
